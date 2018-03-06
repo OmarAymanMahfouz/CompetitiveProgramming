@@ -47,6 +47,5 @@ int main()
 		memset(vis, 0, sizeof vis);
 	}
 
-	system("pause");
 	return 0;
 }
