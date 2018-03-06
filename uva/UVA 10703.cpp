@@ -38,8 +38,10 @@ int main()
 			for (int j = 1; j <= y; j++)
 				if (!vis[i][j])
 					c++;
-		if (c == 0 || c == 1)
+		if (c == 0)
 			cout << "There is no empty spots.\n";
+		else if (c == 1)
+			cout << "There is one empty spot.\n";
 		else
 			cout << "There are " << c << " empty spots.\n";
 		memset(vis, 0, sizeof vis);
