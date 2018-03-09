@@ -13,8 +13,7 @@ using namespace std;
 int main()
 {
 	string t, s;
-	int x = 4;
-	while (x-- != 0)
+	while (cin >> t)
 	{
 		cin >> t;
 		for (int i = 0; i < t.length(); i++)
