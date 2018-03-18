@@ -1,13 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <set>
-#include <vector>
-#include <algorithm>
-#include <cmath>
+#include <stdio.h>
 #include <string>
+#include <cmath>
+#include <queue>
+#include <stack>
+#include <algorithm>
 #include <string.h>
 #include <iomanip>
+#include <vector>
+#include <set>
+#include <map>
+#include <unordered_map>
+#include <unordered_set>
 #define ll long long
-#define ull unsigned long long
+#define ull unsigned long long 
 #define ld long double
 using namespace std;
 int main()
@@ -20,24 +27,22 @@ int main()
 			if (t[i] >= 'A' && t[i] <= 'Z')
 				t[i] += 32;
 		}
-		s += t + " ";
+		if (t[t.size() - 1] == '-')
+			t.pop_back(), s += t;
+		else
+			s += t + " ";
 	}
 	vector<bool> vis(s.length());
-	set<string> ans;
-	int prev = 0, next = 0;
-	t = "";
-	for (int i = 0; i < s.length(); i++)
+	for (int i = 0; i < s.size(); i++)
 	{
-		if (s[i] >= 'a' && s[i] <= 'z')
-		{
+		if (s[i] == '-' || (s[i] >= 'a' && s[i] <= 'z'))
 			continue;
-		}
 		else
-		{
 			vis[i] = 1;
-		}
 	}
-	bool f = 0;
+	set<string> ans;
+	bool f;
+	t = "";
 	for (int i = 0; i < s.length(); i++)
 	{
 		if (!vis[i])
@@ -51,6 +56,5 @@ int main()
 	}
 	for (set<string> ::iterator it = ans.begin(); it != ans.end(); it++)
 		cout << *it << endl;
-	
 	return 0;
 }
