@@ -32,7 +32,7 @@ struct node {
 	ll sum = 0;
 };
 int x, y;
-vector<int> v(21);
+vector<ll> v(21);
 bool operator < (node a, node b)
 {
 	if (a.sum != b.sum)return a.sum > b.sum;
