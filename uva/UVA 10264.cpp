@@ -22,7 +22,8 @@
 using namespace std;
 int main() 
 {
-	int n, mx;
+	int n;
+	ll mx;
 	vector<int> vec, vec2;
 	while (cin >> n)
 	{
@@ -30,7 +31,9 @@ int main()
 		vec2.resize(1 << n);
 		for (int i = 0; i < (1 << n); i++)
 			cin >> vec[i];
-		for (int i = 0; i < (1 << n); i++)   //  (000)2 ==> (001)2, (010)2, (100)2   /  (001)2 ==> (000)2, (011)2, (101)2
+		//  get the summation of neighbour vertices, below is an example of vertex 0 & 1 in 3D diminsional
+		//  (000)2 ==> (001)2, (010)2, (100)2   /  (001)2 ==> (000)2, (011)2, (101)2
+		for (int i = 0; i < (1 << n); i++)   
 			for (int j = 0; j < n; j++)
 				vec2[i] += vec[i ^ (1 << j)];
 	
