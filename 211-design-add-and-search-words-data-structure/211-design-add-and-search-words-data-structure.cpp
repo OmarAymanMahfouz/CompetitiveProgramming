@@ -1,7 +1,9 @@
 struct Node{
-    vector<Node*> child{26, nullptr};
+    Node* child[26];
     bool isEndOfWord;
-    Node(): isEndOfWord(false){ }
+    Node(): isEndOfWord(false){
+       fill(child, child + 26, nullptr);
+    }
 };
 
 class WordDictionary {
