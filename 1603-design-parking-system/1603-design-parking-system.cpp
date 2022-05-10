@@ -1,6 +1,6 @@
 class ParkingSystem {
 private:
-    int big, medium, small;
+    short big, medium, small;
 public:
     ParkingSystem(int big, int medium, int small) {
         this->big = big;
