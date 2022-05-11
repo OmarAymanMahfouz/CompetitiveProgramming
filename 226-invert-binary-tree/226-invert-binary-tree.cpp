@@ -12,8 +12,6 @@
 class Solution {
 private:
     void solve(TreeNode* mainTree, TreeNode* invertedTree){
-        if(!mainTree)
-            return;
         if(mainTree->left){
             invertedTree->right = new TreeNode(mainTree->left->val);
             solve(mainTree->left, invertedTree->right);
